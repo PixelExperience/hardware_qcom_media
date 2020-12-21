@@ -1,4 +1,7 @@
 # TODO:  Find a better way to separate build configs for ADP vs non-ADP devices
+
+ifneq ($(PRODUCT_PLATFORM_SOD),true)
+
 ifneq ($(TARGET_BOARD_AUTO),true)
 
   QCOM_MEDIA_ROOT := $(call my-dir)/msm8974
@@ -29,3 +32,4 @@ ifneq ($(TARGET_BOARD_AUTO),true)
     include $(QCOM_MEDIA_ROOT)/libc2dcolorconvert/Android.mk
   endif
 endif
+endif #PRODUCT_PLATFORM_SOD
